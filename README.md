@@ -9,7 +9,7 @@ Plugin depends on [cordova-support-google-services](https://github.com/chemerisu
 
 Use variable `FIREBASE_CORE_VERSION` to override dependency version on Android.
 
-**WARNING**: This repo [includes `AdSupport.framework`](https://firebase.google.com/support/guides/analytics-adsupport), and you need to confirm this when submitting the App Store.  Failing to do this can result in getting banned.
+NOTE: on iOS in order to collect demographic, age, gender data etc. you should additionally [include `AdSupport.framework`](https://firebase.google.com/support/guides/analytics-adsupport) into your project.
 
 ## Supported Platforms
 
