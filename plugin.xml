@@ -33,6 +33,7 @@ xmlns:android="http://schemas.android.com/apk/res/android"
 
         <framework src="Firebase/Core" type="podspec" spec="~> 5.0"/>
         <framework src="GoogleIDFASupport" type="podspec" spec="3.14.0"/>
+        <framework src="iAd.framework" weak="true"/>
     </platform>
 
     <platform name="android">
