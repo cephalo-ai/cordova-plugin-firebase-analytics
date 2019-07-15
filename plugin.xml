@@ -1,7 +1,7 @@
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
 xmlns:android="http://schemas.android.com/apk/res/android"
            id="cordova-plugin-firebase-analytics"
-      version="1.0.2">
+      version="3.0.0">
 
     <name>FirebaseAnalyticsPlugin</name>
     <description>Cordova plugin for Firebase Analytics</description>
@@ -15,9 +15,9 @@ xmlns:android="http://schemas.android.com/apk/res/android"
     </js-module>
 
     <engines>
-        <engine name="cordova" version=">=7.1.0"/>
-        <engine name="cordova-android" version=">=7.0.0"/>
-        <engine name="cordova-ios" version=">=4.3.0"/>
+        <engine name="cordova" version=">=9.0.0"/>
+        <engine name="cordova-android" version=">=8.0.0"/>
+        <engine name="cordova-ios" version=">=5.0.0"/>
     </engines>
 
     <platform name="ios">
@@ -31,13 +31,20 @@ xmlns:android="http://schemas.android.com/apk/res/android"
         <header-file src="src/ios/FirebaseAnalyticsPlugin.h" />
         <source-file src="src/ios/FirebaseAnalyticsPlugin.m" />
 
-        <framework src="Firebase/Core" type="podspec" spec="~> 5.0"/>
-        <framework src="GoogleIDFASupport" type="podspec" spec="3.14.0"/>
         <framework src="iAd.framework" weak="true"/>
+        <podspec>
+            <config>
+                <source url="https://github.com/CocoaPods/Specs.git"/>
+            </config>
+            <pods>
+                <pod name="Firebase/Analytics" spec="~> 6.3.0" />
+                <pod name="GoogleIDFASupport" spec="3.14.0"/>
+            </pods>
+        </podspec>
     </platform>
 
     <platform name="android">
-        <preference name="FIREBASE_CORE_VERSION" default="16.0.+"/>
+        <preference name="FIREBASE_CORE_VERSION" default="17.0.+"/>
 
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="FirebaseAnalytics">
@@ -51,7 +58,7 @@ xmlns:android="http://schemas.android.com/apk/res/android"
         </config-file>
 
         <dependency id="cordova-support-android-plugin" version="~1.0.0"/>
-        <dependency id="cordova-support-google-services" version="~1.3.0"/>
+        <dependency id="cordova-support-google-services" version="^1.3.0"/>
 
         <framework src="com.google.firebase:firebase-core:$FIREBASE_CORE_VERSION" />
 
